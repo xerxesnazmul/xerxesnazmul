@@ -1,10 +1,8 @@
 name: gitartwork from a contribution graph
-on: 
+on:
   push:
-  pull_request:
   schedule:
     - cron: '* */24 * * *'
-  workflow_dispatch:  
 jobs:
   build:
     name: Make gitartwork SVG
@@ -13,6 +11,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: jasineri/gitartwork@v1
         with:
-           user_name: jasineri
-           text: JASINERI
+          # Use this username's contribution graph
+          user_name: me-shaon
+          # Text on contribution graph
+          text: NAZMUL
       - uses: jasineri/simple-push-action@v1
